@@ -20,8 +20,8 @@ serve(async (req) => {
     }
 
     const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
-    // Thay đổi model từ "gemini-pro" thành "gemini-1.0-pro"
-    const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
+    // Cập nhật model thành "gemini-2.5-flash" theo thông tin của bạn
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const result = await model.generateContent(message);
     const response = await result.response;
