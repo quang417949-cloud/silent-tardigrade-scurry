@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { MadeWithDyad } from "@/components/made-with-dyad";
+import NewsSection from '@/components/NewsSection'; // Import NewsSection
 
 const Index = () => {
   const scrollToSection = (id: string) => {
@@ -14,7 +15,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       {/* Banner Section */}
-      <section className="relative h-[60vh] md:h-[70vh] bg-cover bg-center flex items-center justify-center text-white" style={{ backgroundImage: "url('/anh-dep-dong-nai-1.jpg')" }}>
+      <section className="relative h-[60vh] md:h-[70vh] bg-cover bg-center flex items-center justify-center text-white" style={{ backgroundImage: "url('/placeholder.svg')" }}>
         {/* Placeholder cho hình ảnh động. Vui lòng thay thế bằng đường dẫn hình ảnh thực tế. */}
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 text-center p-4 max-w-4xl mx-auto">
@@ -30,6 +31,7 @@ const Index = () => {
           <Button variant="ghost" className="text-base md:text-lg" onClick={() => scrollToSection('industry')}>Công nghiệp</Button>
           <Button variant="ghost" className="text-base md:text-lg" onClick={() => scrollToSection('investment')}>Đầu tư</Button>
           <Button variant="ghost" className="text-base md:text-lg" onClick={() => scrollToSection('contact')}>Liên hệ</Button>
+          <Button variant="ghost" className="text-base md:text-lg" onClick={() => scrollToSection('gemini-chat-section')}>Hỏi Gemini</Button>
         </div>
       </nav>
 
@@ -104,6 +106,10 @@ const Index = () => {
               </p>
             </CardContent>
           </Card>
+          {/* News Section for Tourism */}
+          <div className="mt-16">
+            <NewsSection title="Tin tức Du lịch Đồng Nai" query="Du lịch Đồng Nai" />
+          </div>
         </section>
 
         {/* Công nghiệp Section */}
@@ -164,6 +170,10 @@ const Index = () => {
               </p>
             </CardContent>
           </Card>
+          {/* News Section for Industry */}
+          <div className="mt-16">
+            <NewsSection title="Tin tức Công nghiệp Đồng Nai" query="Công nghiệp Đồng Nai" />
+          </div>
         </section>
 
         {/* Đầu tư Section */}
@@ -212,6 +222,22 @@ const Index = () => {
                   Chúng tôi luôn sẵn lòng hỗ trợ và cung cấp thông tin chi tiết nhất.
                 </p>
               </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Gemini Chat Section */}
+        <section id="gemini-chat-section" className="mb-16 pt-8">
+          <Card className="p-6 md:p-8 shadow-lg border-none bg-white dark:bg-gray-800">
+            <CardHeader className="text-center">
+              <CardTitle className="text-3xl md:text-4xl font-bold mb-4 text-primary dark:text-primary-foreground">Hỏi Gemini</CardTitle>
+              <CardDescription className="text-lg md:text-xl text-muted-foreground">Trò chuyện với trợ lý AI để tìm hiểu thêm về Đồng Nai.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              {/* GeminiChat component will go here */}
+              <p className="text-center text-lg text-gray-600 dark:text-gray-400">
+                Chức năng chat với Gemini sẽ được thêm vào đây.
+              </p>
             </CardContent>
           </Card>
         </section>
