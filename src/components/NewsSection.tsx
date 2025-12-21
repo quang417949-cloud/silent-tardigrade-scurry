@@ -23,11 +23,8 @@ const NewsSection: React.FC<NewsSectionProps> = ({ title, query }) => {
       setLoading(true);
       setError(null);
       try {
-        // Thay thế 'YOUR_SUPABASE_PROJECT_ID' bằng Project ID thực của bạn
-        // hoặc sử dụng biến môi trường nếu bạn đã cấu hình
-        const projectId = 'sbryacaoahweuvvcowba'; 
         const { data, error } = await supabase.functions.invoke('fetch-news', {
-          body: { query },
+          body: JSON.stringify({ query }), // Đảm bảo body là một chuỗi JSON
           headers: {
             'Content-Type': 'application/json',
           },
