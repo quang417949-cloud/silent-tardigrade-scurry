@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       {/* Banner Section */}
-      <section className="relative h-[60vh] md:h-[70vh] bg-cover bg-center flex items-center justify-center text-white" style={{ backgroundImage: "url('/placeholder.svg')" }}>
+      <section className="relative h-[60vh] md:h-[70vh] bg-cover bg-center flex items-center justify-center text-white" style={{ backgroundImage: "url('/anh-dep-dong-nai-1.jpg')" }}>
         {/* Placeholder cho hình ảnh động. Vui lòng thay thế bằng đường dẫn hình ảnh thực tế. */}
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 text-center p-4 max-w-4xl mx-auto">
