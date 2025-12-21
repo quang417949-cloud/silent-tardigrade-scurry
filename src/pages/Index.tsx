@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import NewsSection from '@/components/NewsSection'; // Import NewsSection
+import NewsSection from '@/components/NewsSection';
+import GeminiChat from '@/components/GeminiChat'; // Import GeminiChat
 
 const Index = () => {
   const scrollToSection = (id: string) => {
@@ -234,10 +235,7 @@ const Index = () => {
               <CardDescription className="text-lg md:text-xl text-muted-foreground">Trò chuyện với trợ lý AI để tìm hiểu thêm về Đồng Nai.</CardDescription>
             </CardHeader>
             <CardContent>
-              {/* GeminiChat component will go here */}
-              <p className="text-center text-lg text-gray-600 dark:text-gray-400">
-                Chức năng chat với Gemini sẽ được thêm vào đây.
-              </p>
+              <GeminiChat /> {/* GeminiChat component goes here */}
             </CardContent>
           </Card>
         </section>
