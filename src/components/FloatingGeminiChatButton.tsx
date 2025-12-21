@@ -12,11 +12,12 @@ const FloatingGeminiChatButton: React.FC = () => {
   return (
     <>
       <Button
-        className="fixed bottom-6 right-6 rounded-full p-4 shadow-lg z-50"
+        className="fixed bottom-6 right-6 rounded-full p-4 shadow-lg z-50 flex items-center space-x-2 pr-6" // Thêm padding-right và flexbox để căn chỉnh
         onClick={() => setIsOpen(true)}
         aria-label="Mở trò chuyện với Gemini"
       >
         <MessageSquareText className="h-6 w-6" />
+        <span className="text-base font-semibold">Hỏi Gemini</span> {/* Thêm dòng chữ */}
       </Button>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
