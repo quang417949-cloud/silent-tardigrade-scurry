@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Separator } from "@/components/ui/separator";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import NewsSection from '@/components/NewsSection';
-import GeminiChat from '@/components/GeminiChat'; // Import GeminiChat
+import FloatingGeminiChatButton from '@/components/FloatingGeminiChatButton'; // Import FloatingGeminiChatButton
 
 const Index = () => {
   const scrollToSection = (id: string) => {
@@ -32,7 +32,7 @@ const Index = () => {
           <Button variant="ghost" className="text-base md:text-lg" onClick={() => scrollToSection('industry')}>Công nghiệp</Button>
           <Button variant="ghost" className="text-base md:text-lg" onClick={() => scrollToSection('investment')}>Đầu tư</Button>
           <Button variant="ghost" className="text-base md:text-lg" onClick={() => scrollToSection('contact')}>Liên hệ</Button>
-          <Button variant="ghost" className="text-base md:text-lg" onClick={() => scrollToSection('gemini-chat-section')}>Hỏi Gemini</Button>
+          {/* Xóa nút 'Hỏi Gemini' khỏi thanh điều hướng vì giờ đã có nút nổi */}
         </div>
       </nav>
 
@@ -227,21 +227,22 @@ const Index = () => {
           </Card>
         </section>
 
-        {/* Gemini Chat Section */}
-        <section id="gemini-chat-section" className="mb-16 pt-8">
+        {/* Xóa phần Gemini Chat Section cũ */}
+        {/* <section id="gemini-chat-section" className="mb-16 pt-8">
           <Card className="p-6 md:p-8 shadow-lg border-none bg-white dark:bg-gray-800">
             <CardHeader className="text-center">
               <CardTitle className="text-3xl md:text-4xl font-bold mb-4 text-primary dark:text-primary-foreground">Hỏi Gemini</CardTitle>
               <CardDescription className="text-lg md:text-xl text-muted-foreground">Trò chuyện với trợ lý AI để tìm hiểu thêm về Đồng Nai.</CardDescription>
             </CardHeader>
             <CardContent>
-              <GeminiChat /> {/* GeminiChat component goes here */}
+              <GeminiChat />
             </CardContent>
           </Card>
-        </section>
+        </section> */}
       </main>
 
       <MadeWithDyad />
+      <FloatingGeminiChatButton /> {/* Thêm nút nổi Gemini vào đây */}
     </div>
   );
 };
