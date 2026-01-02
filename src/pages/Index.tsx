@@ -16,7 +16,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       {/* Banner Section */}
-      <section className="relative h-[60vh] md:h-[70vh] bg-cover bg-center flex items-center justify-center text-white" style={{ backgroundImage: "url('/placeholder.svg')" }}>
+      <section className="relative h-[60vh] md:h-[70vh] bg-cover bg-center flex items-center justify-center text-white" style={{ backgroundImage: "url('/anh-dep-dong-nai-1.jpg')" }}>
         {/* Placeholder cho hình ảnh động. Vui lòng thay thế bằng đường dẫn hình ảnh thực tế. */}
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 text-center p-4 max-w-4xl mx-auto">
@@ -58,9 +58,9 @@ const Index = () => {
                     <span className="block text-sm italic text-gray-500 dark:text-gray-400 mt-1">Nguồn: Wikipedia</span>
                   </p>
                 </div>
-                <div className="flex justify-center order-1 md:order-2">
-                  <img src="/placeholder.svg" alt="Công viên quốc gia Cát Tiên" className="rounded-lg shadow-xl w-full max-w-md object-cover h-64 md:h-80" />
-                  <p className="sr-only">Hình ảnh gợi ý: Công viên quốc gia Cát Tiên / Hồ Trị An. Nguồn: Wikipedia</p>
+                <div className="flex flex-col gap-4 order-1 md:order-2">
+                  <img src="/nam-cat-tien.jpg" alt="Công viên quốc gia Cát Tiên" className="rounded-lg shadow-xl w-full object-cover h-64 md:h-80" />
+                  <img src="/ho_tri_an_3.webp" alt="Du lịch sinh thái Đồng Nai" className="rounded-lg shadow-xl w-full object-cover h-64 md:h-80" />
                 </div>
               </div>
               <Separator className="my-8 bg-border dark:bg-gray-700" />
@@ -68,7 +68,7 @@ const Index = () => {
               {/* Du lịch cộng đồng – nông nghiệp */}
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="flex justify-center">
-                  <img src="/placeholder.svg" alt="Vườn trái cây Tân Triều" className="rounded-lg shadow-xl w-full max-w-md object-cover h-64 md:h-80" />
+                  <img src="/bttt.jpg" alt="Vườn trái cây Tân Triều" className="rounded-lg shadow-xl w-full max-w-md object-cover h-64 md:h-80" />
                   <p className="sr-only">Hình ảnh gợi ý: Các điểm du lịch sinh thái nông nghiệp / làng du lịch cộng đồng (Tân Triều, vườn trái cây). Nguồn: Du Lịch Nông Thôn</p>
                 </div>
                 <div>
@@ -95,7 +95,7 @@ const Index = () => {
                   </p>
                 </div>
                 <div className="flex justify-center order-1 md:order-2">
-                  <img src="/placeholder.svg" alt="Khu du lịch Bửu Long" className="rounded-lg shadow-xl w-full max-w-md object-cover h-64 md:h-80" />
+                  <img src="/buulong.jpg" alt="Khu du lịch Bửu Long" className="rounded-lg shadow-xl w-full max-w-md object-cover h-64 md:h-80" />
                   <p className="sr-only">Hình ảnh gợi ý: Khu du lịch Bửu Long / Son Tien. Nguồn: Vinpearl / Cổng thông tin điện tử Đồng Nai</p>
                 </div>
               </div>
@@ -139,13 +139,13 @@ const Index = () => {
                   </p>
                 </div>
                 <div className="flex justify-center order-1 md:order-2">
-                  <img src="/placeholder.svg" alt="Khu công nghiệp Amata Biên Hòa" className="rounded-lg shadow-xl w-full max-w-md object-cover h-64 md:h-80" />
+                  <img src="/amata.jpg" alt="Khu công nghiệp Amata Biên Hòa" className="rounded-lg shadow-xl w-full max-w-md object-cover h-64 md:h-80" />
                   <p className="sr-only">Hình ảnh gợi ý: Toàn cảnh khu công nghiệp lớn như Amata Biên Hòa, Lộc An – Bình Sơn hoặc Nhơn Trạch. Nguồn: khoxuongdep.com.vn</p>
                 </div>
               </div>
               <Separator className="my-8 bg-border dark:bg-gray-700" />
 
-              {/* Lợi thế thuận lợi */}
+              {/* Lợi thế thuận lợi (sẽ thử insert bản đồ google maps trong tương lai) */}
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="flex justify-center">
                   <img src="/placeholder.svg" alt="Bản đồ vị trí các khu công nghiệp Đồng Nai" className="rounded-lg shadow-xl w-full max-w-md object-cover h-64 md:h-80" />
@@ -189,7 +189,7 @@ const Index = () => {
                 Đồng Nai với những lợi thế vượt trội về vị trí địa lý chiến lược, cơ sở hạ tầng giao thông đồng bộ và chính sách thu hút đầu tư hấp dẫn, luôn là điểm đến lý tưởng cho các nhà đầu tư trong và ngoài nước. Chúng tôi cam kết tạo môi trường kinh doanh thuận lợi nhất để các doanh nghiệp phát triển bền vững.
               </p>
               <div className="flex justify-center mt-6">
-                <img src="/placeholder.svg" alt="Đầu tư tại Đồng Nai" className="rounded-lg shadow-xl w-full max-w-md object-cover h-64 md:h-80" />
+                <img src="/dtdn.jpg" alt="Đầu tư tại Đồng Nai" className="rounded-lg shadow-xl w-full max-w-md object-cover h-64 md:h-80" />
                 <p className="sr-only">Hình ảnh gợi ý: Hình ảnh nhà máy, dây chuyền sản xuất. Nguồn: Bản quyền rõ ràng hoặc miễn phí</p>
               </div>
               <p className="text-center text-lg italic text-gray-600 dark:text-gray-400 mt-6">
