@@ -148,8 +148,7 @@ const Index = () => {
               {/* Lợi thế thuận lợi (sẽ thử insert bản đồ google maps trong tương lai) */}
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="flex justify-center">
-                  <img src="/placeholder.svg" alt="Bản đồ vị trí các khu công nghiệp Đồng Nai" className="rounded-lg shadow-xl w-full max-w-md object-cover h-64 md:h-80" />
-                  <p className="sr-only">Hình ảnh gợi ý: Bản đồ vị trí các khu công nghiệp chính theo tỉnh. Nguồn: Khu Công Nghiệp Du Long</p>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d274994.1116083871!2d106.55715891643254!3d10.799362651918228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zduG7iyB0csOtIGPDoWMga2h1IGPDtG5nIG5naGnhu4dwIOG7nyDEkOG7k25nIE5haQ!5e1!3m2!1svi!2s!4v1767411997325!5m2!1svi!2s" width="400" height="300" style={{border: '0'}} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div>
                   <h3 className="text-2xl md:text-3xl font-semibold mb-3 text-secondary-foreground">Lợi thế thuận lợi</h3>
@@ -189,7 +188,7 @@ const Index = () => {
                 Đồng Nai với những lợi thế vượt trội về vị trí địa lý chiến lược, cơ sở hạ tầng giao thông đồng bộ và chính sách thu hút đầu tư hấp dẫn, luôn là điểm đến lý tưởng cho các nhà đầu tư trong và ngoài nước. Chúng tôi cam kết tạo môi trường kinh doanh thuận lợi nhất để các doanh nghiệp phát triển bền vững.
               </p>
               <div className="flex justify-center mt-6">
-                <img src="/dtdn.jpg" alt="Đầu tư tại Đồng Nai" className="rounded-lg shadow-xl w-full max-w-md object-cover h-64 md:h-80" />
+                <img src="/dtdn.jpg" alt="Đầu tư tại Đồng Nai" className="rounded-lg shadow-xl w-full object-cover h-128 md:h-160" />
                 <p className="sr-only">Hình ảnh gợi ý: Hình ảnh nhà máy, dây chuyền sản xuất. Nguồn: Bản quyền rõ ràng hoặc miễn phí</p>
               </div>
               <p className="text-center text-lg italic text-gray-600 dark:text-gray-400 mt-6">
