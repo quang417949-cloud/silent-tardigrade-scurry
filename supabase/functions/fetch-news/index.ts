@@ -18,7 +18,9 @@ serve(async (req) => {
       throw new Error('NEWS_API_KEY is not set in Supabase secrets.');
     }
 
-    const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(query)}&language=vi&sortBy=relevancy&apiKey=${NEWS_API_KEY}`;
+    // Thay đổi sortBy từ relevancy sang publishedAt để ưu tiên tin tức mới nhất
+    // Thêm pageSize để giới hạn số lượng bài báo
+    const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(query)}&language=vi&sortBy=publishedAt&pageSize=9&apiKey=${NEWS_API_KEY}`;
     
     const response = await fetch(url, {
       headers: {
@@ -33,13 +35,11 @@ serve(async (req) => {
         if (errorData && typeof errorData.message === 'string') {
           errorMessage += ` - ${errorData.message}`;
         } else if (errorData) {
-          errorMessage += ` - ${JSON.stringify(errorData)}`; // Stringify the whole error object if message is not a string
+          errorMessage += ` - ${JSON.stringify(errorData)}`;
         }
       } catch (jsonError) {
-        // If response.json() fails, it means the response body was not valid JSON.
-        // We try to get the raw text to provide more context.
         const rawText = await response.text();
-        errorMessage += ` - Could not parse error response as JSON. Raw response: ${rawText.substring(0, 200)}...`; // Limit raw text for logs
+        errorMessage += ` - Could not parse error response as JSON. Raw response: ${rawText.substring(0, 200)}...`;
       }
       throw new Error(errorMessage);
     }
@@ -49,8 +49,8 @@ serve(async (req) => {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       status: 200,
     });
-  } catch (error: any) { // Sử dụng 'any' để truy cập thuộc tính message một cách linh hoạt
-    console.error('Error in fetch-news Edge Function:', error); // Log toàn bộ đối tượng lỗi để debug
+  } catch (error: any) {
+    console.error('Error in fetch-news Edge Function:', error);
     let clientErrorMessage = "An unexpected error occurred.";
 
     if (error instanceof Error) {
@@ -60,7 +60,7 @@ serve(async (req) => {
     } else if (error && typeof error.message === 'string') {
       clientErrorMessage = error.message;
     } else {
-      clientErrorMessage = JSON.stringify(error); // Trường hợp lỗi không phải Error hoặc không có message
+      clientErrorMessage = JSON.stringify(error);
     }
 
     return new Response(JSON.stringify({ error: clientErrorMessage }), {
