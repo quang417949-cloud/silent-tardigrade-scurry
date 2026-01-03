@@ -5,12 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import NewsSection from '@/components/NewsSection';
 import FloatingGeminiChatButton from '@/components/FloatingGeminiChatButton'; // Import FloatingGeminiChatButton
 
 const Index = () => {
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'smooth' });
   };
 
   return (
@@ -32,7 +31,6 @@ const Index = () => {
           <Button variant="ghost" className="text-base md:text-lg" onClick={() => scrollToSection('industry')}>Công nghiệp</Button>
           <Button variant="ghost" className="text-base md:text-lg" onClick={() => scrollToSection('investment')}>Đầu tư</Button>
           <Button variant="ghost" className="text-base md:text-lg" onClick={() => scrollToSection('contact')}>Liên hệ</Button>
-          {/* Xóa nút 'Hỏi Gemini' khỏi thanh điều hướng vì giờ đã có nút nổi */}
         </div>
       </nav>
 
@@ -107,10 +105,7 @@ const Index = () => {
               </p>
             </CardContent>
           </Card>
-          {/* News Section for Tourism */}
-          <div className="mt-16">
-            <NewsSection title="Tin tức Du lịch Đồng Nai" query="Du lịch Đồng Nai" />
-          </div>
+          {/* Xóa News Section for Tourism */}
         </section>
 
         {/* Công nghiệp Section */}
@@ -170,10 +165,7 @@ const Index = () => {
               </p>
             </CardContent>
           </Card>
-          {/* News Section for Industry */}
-          <div className="mt-16">
-            <NewsSection title="Tin tức Công nghiệp Đồng Nai" query="Công nghiệp Đồng Nai" />
-          </div>
+          {/* Xóa News Section for Industry */}
         </section>
 
         {/* Đầu tư Section */}
@@ -225,23 +217,10 @@ const Index = () => {
             </CardContent>
           </Card>
         </section>
-
-        {/* Xóa phần Gemini Chat Section cũ */}
-        {/* <section id="gemini-chat-section" className="mb-16 pt-8">
-          <Card className="p-6 md:p-8 shadow-lg border-none bg-white dark:bg-gray-800">
-            <CardHeader className="text-center">
-              <CardTitle className="text-3xl md:text-4xl font-bold mb-4 text-primary dark:text-primary-foreground">Hỏi Gemini</CardTitle>
-              <CardDescription className="text-lg md:text-xl text-muted-foreground">Trò chuyện với trợ lý AI để tìm hiểu thêm về Đồng Nai.</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <GeminiChat />
-            </CardContent>
-          </Card>
-        </section> */}
       </main>
 
       <MadeWithDyad />
-      <FloatingGeminiChatButton /> {/* Thêm nút nổi Gemini vào đây */}
+      <FloatingGeminiChatButton />
     </div>
   );
 };
