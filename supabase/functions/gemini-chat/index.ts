@@ -20,8 +20,16 @@ serve(async (req) => {
     }
 
     const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
-    // Cập nhật model thành "gemini-2.5-flash" theo thông tin của bạn
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+    
+    // Định nghĩa System Instruction để giới hạn phạm vi trả lời
+    const systemInstruction = "Bạn là một trợ lý AI chuyên về tỉnh Đồng Nai, Việt Nam. Hãy trả lời các câu hỏi của người dùng chỉ tập trung vào thông tin liên quan đến Đồng Nai (du lịch, kinh tế, văn hóa, lịch sử, địa lý, v.v.). Nếu câu hỏi không liên quan đến Đồng Nai, hãy lịch sự từ chối trả lời và nhắc nhở người dùng hỏi về Đồng Nai.";
+
+    const model = genAI.getGenerativeModel({ 
+      model: "gemini-2.5-flash",
+      config: {
+        systemInstruction: systemInstruction, // Áp dụng hướng dẫn hệ thống
+      }
+    });
 
     const result = await model.generateContent(message);
     const response = await result.response;
