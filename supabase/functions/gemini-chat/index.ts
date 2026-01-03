@@ -21,13 +21,13 @@ serve(async (req) => {
 
     const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
     
-    // Định nghĩa System Instruction mạnh mẽ hơn để giới hạn phạm vi trả lời
+    // System Instruction mạnh mẽ để giới hạn phạm vi trả lời
     const systemInstruction = "Bạn là một trợ lý AI chuyên biệt, được thiết kế để cung cấp thông tin chi tiết và chính xác về tỉnh Đồng Nai, Việt Nam (bao gồm du lịch, kinh tế, văn hóa, lịch sử, địa lý, và các vấn đề liên quan). Bạn PHẢI từ chối trả lời bất kỳ câu hỏi nào không liên quan đến Đồng Nai. Nếu người dùng hỏi về chủ đề khác, hãy lịch sự nhắc nhở họ rằng bạn chỉ có thể trả lời các câu hỏi về Đồng Nai.";
 
     const model = genAI.getGenerativeModel({ 
       model: "gemini-2.5-flash",
       config: {
-        systemInstruction: systemInstruction, // Áp dụng hướng dẫn hệ thống
+        systemInstruction: systemInstruction,
       }
     });
 
